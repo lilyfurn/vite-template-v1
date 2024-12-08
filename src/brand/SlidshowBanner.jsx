@@ -34,7 +34,7 @@ const SlideshowBanner = () => {
   }, [slides.length]);
 
   return (
-    <div className="relative w-full h-[400px] bg-gray-100 overflow-hidden">
+    <div className="relative w-full h-screen bg-gray-100 overflow-hidden">
       {/* Slides */}
       {slides.map((slide, index) => (
         <div

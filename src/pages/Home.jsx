@@ -15,19 +15,19 @@ import UserFeedback from "../brand/UserFeedback"
 const Home = () => {
   return (
     <div className="max-w-full">
-      <ProBanner />
+      {/* <ProBanner /> */}
       <SlideshowBanner />
       <Features />
       <HeroSection />
       <GetStartedGuide />
-      <CustomerReviews />
-      <MarketplaceInvite />
-      <NewsAndEvents />
-      <ProjectShowcase />
-      <SubscriptionSelector />
-      <TechnologyAndExperience />
-      <TrustedBy />
-      <UserFeedback />
+      {/* <CustomerReviews /> */}
+      {/* <MarketplaceInvite /> */}
+      {/* <NewsAndEvents /> */}
+      {/* <ProjectShowcase /> */}
+      {/* <SubscriptionSelector /> */}
+      {/* <TechnologyAndExperience /> */}
+      {/* <TrustedBy /> */}
+      {/* <UserFeedback /> */}
     </div>
   )
 }

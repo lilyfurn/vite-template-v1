@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, Close } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -7,13 +8,30 @@ const Header = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  const navigate = useNavigate();
 
+  const handleNavigate = (path) => {
+    navigate(path);
+    setIsMenuOpen(false); // Close the menu after navigation
+  };
   return (
-    <div className="">
+    <div className=" max-w-[1200px] ">
       {/* Header */}
-      <header className="bg-white shadow-md p-4 flex items-center relative z-50">
+      <header className="bg-white lg:max-w-[1200px] lg:mx-auto lg:relative fixed top-0 left-0 w-full shadow-md p-4 flex items-center z-50">
         {/* Company Name */}
-        <div className="text-xl text-gray-800 font-bold grow">LAIBEL LABS</div>
+        <div
+          className="inline-flex  text-black font-bold grow cursor-pointer"
+          onClick={() => navigate("/")}
+        >
+          <img
+            src="/LaibelLabsHeaderLogo.png"
+            alt="Laibel Labs Logo"
+            className=" mr-2"
+          />
+          <div className="text-gray-800 my-auto font-bold text-3xl text-shadow">
+            LAIBEL LABS
+          </div>
+        </div>
 
         {/* Menu Button */}
         <button className="focus:outline-none" onClick={toggleMenu}>
@@ -38,30 +56,30 @@ const Header = () => {
 
           {/* Menu Content */}
           <nav className="px-6 py-4 space-y-4">
-            <a
-              href="#"
-              className="block text-gray-700 text-lg hover:text-blue-600"
+            <div
+              className="block text-gray-700 text-lg hover:text-blue-600 cursor-pointer"
+              onClick={() => handleNavigate("/launches")}
             >
-              Home
-            </a>
-            <a
-              href="#"
-              className="block text-gray-700 text-lg hover:text-blue-600"
+              LAUNCHES
+            </div>
+            <div
+              className="block text-gray-700 text-lg hover:text-blue-600 cursor-pointer"
+              onClick={() => handleNavigate("/mission")}
             >
-              About Us
-            </a>
-            <a
-              href="#"
-              className="block text-gray-700 text-lg hover:text-blue-600"
+              MISSION
+            </div>
+            <div
+              className="block text-gray-700 text-lg hover:text-blue-600 cursor-pointer"
+              onClick={() => handleNavigate("/services")}
             >
-              Services
-            </a>
-            <a
-              href="#"
-              className="block text-gray-700 text-lg hover:text-blue-600"
+              SERVICES
+            </div>
+            <div
+              className="block text-gray-700 text-lg hover:text-blue-600 cursor-pointer"
+              onClick={() => handleNavigate("/contact")}
             >
-              Contact
-            </a>
+              CONTACT
+            </div>
           </nav>
         </div>
       )}

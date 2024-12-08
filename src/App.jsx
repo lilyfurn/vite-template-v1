@@ -6,6 +6,11 @@ import useCookiePreferences from "./hooks/useCookiePreferences";
 import { useEffect, useState } from "react";
 import Header from "./common/Header";
 import Footer from "./common/Footer";
+import ContactForm from "./common/ContactForm";
+import DoesNotExist from "./common/DoesNotExist";
+import Mission from "./pages/Mission";
+import Services from "./pages/Services";
+import Launches from "./pages/Launches";
 
 function AppContent() {
   const {
@@ -43,6 +48,11 @@ function AppContent() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/*" element={<DoesNotExist />} />
+        <Route path="/launches" element={<Launches />} />
+        <Route path="/mission" element={<Mission />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<ContactForm />} />
       </Routes>
       <Footer />
     </div>

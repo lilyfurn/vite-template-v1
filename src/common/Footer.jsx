@@ -1,6 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import { Telegram } from "@mui/icons-material";
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  const handleNavigate = (path) => {
+    navigate(path); // Navigate to the specified path
+  };
+
   return (
     <footer className="bg-gray-900 text-gray-300 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,37 +22,40 @@ const Footer = () => {
           </div>
 
           {/* Navigation Links */}
-          <div>
-            <h3 className="text-lg font-semibold text-white">Quick Links</h3>
-            <ul className="mt-4 space-y-2">
-              <li>
-                <a href="#" className="hover:underline">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  Services
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  Contact
-                </a>
-              </li>
-            </ul>
+          <div className="uppercase">
+            <h3 className="text-lg font-semibold text-white">QUICK LINKS</h3>
+            <div className="mt-4 space-y-2">
+              <div
+                className="hover:underline cursor-pointer"
+                onClick={() => handleNavigate("/launches")}
+              >
+                LAUNCHES
+              </div>
+              <div
+                className="hover:underline cursor-pointer"
+                onClick={() => handleNavigate("/mission")}
+              >
+                MISSION
+              </div>
+              <div
+                className="hover:underline cursor-pointer"
+                onClick={() => handleNavigate("/services")}
+              >
+                SERVICES
+              </div>
+              <div
+                className="hover:underline cursor-pointer"
+                onClick={() => handleNavigate("/contact")}
+              >
+                CONTACT
+              </div>
+            </div>
           </div>
 
           {/* Social Media */}
           <div>
-            <h3 className="text-lg font-semibold text-white">Follow Us</h3>
+            <h3 className="text-lg font-semibold text-white">Connect</h3>
             <div className="mt-4 flex space-x-4">
-              
               <a
                 href="https://www.t.me/LaibelLabs"
                 target="_blank"
@@ -61,7 +71,7 @@ const Footer = () => {
         {/* Footer Bottom */}
         <div className="mt-8 border-t border-gray-700 pt-6 text-center">
           <p className="text-sm text-gray-400">
-            © {new Date().getFullYear()} Laibel Labs. All rights reserved.
+            © {new Date().getFullYear()} LAIBEL LABS LLC. All rights reserved.
           </p>
         </div>
       </div>
